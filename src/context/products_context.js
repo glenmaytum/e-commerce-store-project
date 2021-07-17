@@ -17,7 +17,7 @@ const initialState = {
 	isSidebarOpen: false,
 	products_loading: false,
 	products_error: false,
-	product: [],
+	products: [],
 	featured_products: [],
 	single_product_loading: false,
 	single_product_error: false,
@@ -32,7 +32,6 @@ export const ProductsProvider = ({ children }) => {
 	const openSidebar = () => {
 		dispatch({ type: SIDEBAR_OPEN });
 	};
-
 	const closeSidebar = () => {
 		dispatch({ type: SIDEBAR_CLOSE });
 	};
@@ -47,7 +46,6 @@ export const ProductsProvider = ({ children }) => {
 			dispatch({ type: GET_PRODUCTS_ERROR });
 		}
 	};
-
 	const fetchSingleProduct = async (url) => {
 		dispatch({ type: GET_SINGLE_PRODUCT_BEGIN });
 		try {

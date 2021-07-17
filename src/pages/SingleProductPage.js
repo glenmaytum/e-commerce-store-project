@@ -13,7 +13,6 @@ import {
 } from "../components";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-
 const SingleProductPage = () => {
 	const { id } = useParams();
 	const history = useHistory();
@@ -26,22 +25,23 @@ const SingleProductPage = () => {
 
 	useEffect(() => {
 		fetchSingleProduct(`${url}${id}`);
+		// eslint-disable-next-line
 	}, [id]);
-
 	useEffect(() => {
 		if (error) {
 			setTimeout(() => {
 				history.push("/");
 			}, 3000);
 		}
+		// eslint-disable-next-line
 	}, [error]);
-
 	if (loading) {
 		return <Loading />;
 	}
 	if (error) {
 		return <Error />;
 	}
+
 	const {
 		name,
 		price,
@@ -56,7 +56,7 @@ const SingleProductPage = () => {
 	return (
 		<Wrapper>
 			<PageHero title={name} product />
-			<div className="section section-center">
+			<div className="section section-center page">
 				<Link to="/products" className="btn">
 					back to products
 				</Link>
@@ -72,11 +72,11 @@ const SingleProductPage = () => {
 							{stock > 0 ? "In stock" : "out of stock"}
 						</p>
 						<p className="info">
-							<span>SKU : </span>
+							<span>SKU :</span>
 							{sku}
 						</p>
 						<p className="info">
-							<span>Brand : </span>
+							<span>Brand :</span>
 							{company}
 						</p>
 						<hr />
@@ -110,7 +110,6 @@ const Wrapper = styled.main`
 			font-weight: 700;
 		}
 	}
-
 	@media (min-width: 992px) {
 		.product-center {
 			grid-template-columns: 1fr 1fr;
