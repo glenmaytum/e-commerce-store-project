@@ -1,4 +1,5 @@
 ## Notes
+This is an e-commerce store project
 
 #### Older React Version
 
@@ -21,3 +22,4 @@
 .env file in the root
 FAST_REFRESH=FALSE
 # e-commerce-store-project
+
